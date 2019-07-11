@@ -23,19 +23,19 @@ class ViewController: UIViewController{
         let fileName: String = "note\(tagID)"
         let audioPath = Bundle.main.path(forResource: fileName, ofType: "wav")
         
-        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+            audioPlayer.play()
+        } catch {
+            print(error)
+        }
         
     }
 
     @IBAction func notePressed(_ sender: UIButton) {
 
 
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))
-            audioPlayer.play()
-        } catch {
-            print(error)
-        }
+
         
     }
     
