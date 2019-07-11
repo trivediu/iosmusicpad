@@ -18,7 +18,7 @@ class ViewController: UIViewController{
     }
 
 
-    func playAudio(tagID: Int) {
+    func triggerAudio(tagID: Int) {
         //get file and generate audio path
         let fileName: String = "note\(tagID)"
         let audioPath = Bundle.main.path(forResource: fileName, ofType: "wav")
@@ -33,10 +33,8 @@ class ViewController: UIViewController{
     }
 
     @IBAction func notePressed(_ sender: UIButton) {
-
-
-
-        
+        let tagID = sender.tag
+        triggerAudio(tagID: tagID)
     }
     
   
